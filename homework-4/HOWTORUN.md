@@ -44,7 +44,7 @@ Expected output: 7 tests pass, 0 failures.
 
 ## Using the Agent Pipeline
 
-The agents are defined as markdown files in `./claude/agents/`. To run the pipeline manually for a new bug:
+The agents are defined as markdown files in `/agents/`. To run the pipeline manually for a new bug:
 
 1. Create `context/bugs/<BUG_ID>/bug-context.md` with bug description.
 2. Run Bug Researcher (not included — produces `research/codebase-research.md`).
