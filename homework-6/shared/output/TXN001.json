@@ -1,0 +1,22 @@
+{
+  "message_id": "cff652c4-f776-449b-9a87-4e91842d981d",
+  "timestamp": "2026-03-22T21:36:49.931Z",
+  "source_agent": "transaction_validator",
+  "target_agent": "fraud_detector",
+  "message_type": "transaction",
+  "data": {
+    "transaction_id": "TXN001",
+    "timestamp": "2026-03-16T09:00:00Z",
+    "source_account": "ACC-1001",
+    "destination_account": "ACC-2001",
+    "amount": "1500.00",
+    "currency": "USD",
+    "transaction_type": "transfer",
+    "description": "Monthly rent payment",
+    "metadata": {
+      "channel": "online",
+      "country": "US"
+    },
+    "status": "validated"
+  }
+}

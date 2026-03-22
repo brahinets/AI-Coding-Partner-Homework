@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-03-22T21:36:49.946Z",
+  "total_transactions": 8,
+  "settled_count": 5,
+  "rejected_count": 3,
+  "by_risk_level": {
+    "LOW": 3,
+    "MEDIUM": 2,
+    "HIGH": 1,
+    "N/A": 2
+  },
+  "rejection_reasons": {
+    "FRAUD_RISK_HIGH": 1,
+    "INVALID_CURRENCY": 1,
+    "INVALID_AMOUNT": 1
+  },
+  "aml_review_required": [
+    "TXN002",
+    "TXN005"
+  ]
+}

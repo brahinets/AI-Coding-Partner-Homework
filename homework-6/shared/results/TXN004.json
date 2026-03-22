@@ -1,0 +1,21 @@
+{
+  "transaction_id": "TXN004",
+  "timestamp": "2026-03-16T02:47:00Z",
+  "source_account": "ACC-1004",
+  "destination_account": "ACC-5500",
+  "amount": "500.00",
+  "currency": "EUR",
+  "transaction_type": "transfer",
+  "description": "Invoice #4471",
+  "metadata": {
+    "channel": "api",
+    "country": "DE"
+  },
+  "status": "settled",
+  "fraud_risk_score": 3,
+  "fraud_risk_level": "MEDIUM",
+  "compliance_status": "cleared",
+  "settlement_id": "149dd71b-5804-4463-8f2e-f58473cf4031",
+  "settlement_timestamp": "2026-03-22T21:36:49.942Z",
+  "review_flag": true
+}

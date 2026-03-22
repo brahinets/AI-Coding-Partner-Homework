@@ -1,0 +1,20 @@
+{
+  "transaction_id": "TXN001",
+  "timestamp": "2026-03-16T09:00:00Z",
+  "source_account": "ACC-1001",
+  "destination_account": "ACC-2001",
+  "amount": "1500.00",
+  "currency": "USD",
+  "transaction_type": "transfer",
+  "description": "Monthly rent payment",
+  "metadata": {
+    "channel": "online",
+    "country": "US"
+  },
+  "status": "settled",
+  "fraud_risk_score": 0,
+  "fraud_risk_level": "LOW",
+  "compliance_status": "cleared",
+  "settlement_id": "6e546c52-d949-4fe4-88aa-c152169fcbca",
+  "settlement_timestamp": "2026-03-22T21:36:49.938Z"
+}
