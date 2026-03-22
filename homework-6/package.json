@@ -11,10 +11,26 @@
     "uuid": "^13.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "pipeline": "node integrator.js"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "agents/**/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 80
+      }
+    }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "devDependencies": {
+    "jest": "^30.3.0"
+  }
 }
