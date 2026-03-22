@@ -1,0 +1,41 @@
+{
+  "mcpServers": {
+    "github": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    },
+    "filesystem": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/y.brahinets/Yaro/playground/AI-Coding-Partner-Homework/AI-Coding-Partner-Homework"
+      ]
+    },
+    "yaroslav-custom-mcp": {
+      "type": "stdio",
+      "command": "/Users/y.brahinets/Yaro/playground/AI-Coding-Partner-Homework/AI-Coding-Partner-Homework/homework-5/custom-mcp-server/.venv/bin/python",
+      "args": [
+        "/Users/y.brahinets/Yaro/playground/AI-Coding-Partner-Homework/AI-Coding-Partner-Homework/homework-5/custom-mcp-server/server.py"
+      ]
+    },
+    "atlassian": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["mcp-atlassian"],
+      "env": {
+        "JIRA_URL": "${JIRA_URL}",
+        "JIRA_USERNAME": "${JIRA_USERNAME}",
+        "JIRA_API_TOKEN": "${JIRA_API_TOKEN}",
+        "CONFLUENCE_URL": "${CONFLUENCE_URL}",
+        "CONFLUENCE_USERNAME": "${CONFLUENCE_USERNAME}",
+        "CONFLUENCE_API_TOKEN": "${CONFLUENCE_API_TOKEN}"
+      }
+    }
+  }
+}
