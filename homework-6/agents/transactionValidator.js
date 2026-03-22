@@ -95,3 +95,54 @@ function processMessage(message) {
 }
 
 module.exports = { processMessage };
+
+// --dry-run mode: validate sample-transactions.json and print a summary table
+if (require.main === module && process.argv.includes('--dry-run')) {
+  const fs = require('fs');
+  const path = require('path');
+  const { v4: uuidv4 } = require('uuid');
+  const samplePath = path.join(__dirname, '..', 'sample-transactions.json');
+  const transactions = JSON.parse(fs.readFileSync(samplePath, 'utf8'));
+
+  const rows = transactions.map((txn) => {
+    const message = {
+      message_id: uuidv4(),
+      timestamp: new Date().toISOString(),
+      source_agent: 'dry_run',
+      target_agent: 'transaction_validator',
+      message_type: 'transaction',
+      data: { ...txn },
+    };
+    const result = processMessage(message);
+    return {
+      transaction_id: txn.transaction_id,
+      valid: result.data.status === 'validated',
+      rejection_reason: result.data.rejection_reason || '',
+    };
+  });
+
+  const valid = rows.filter((r) => r.valid).length;
+  const invalid = rows.length - valid;
+
+  console.log(`\nDry-run Validation Results`);
+  console.log('='.repeat(55));
+  console.log(`${'Transaction'.padEnd(12)} ${'Status'.padEnd(10)} Rejection Reason`);
+  console.log('-'.repeat(55));
+  for (const r of rows) {
+    const status = r.valid ? 'VALID' : 'INVALID';
+    console.log(`${r.transaction_id.padEnd(12)} ${status.padEnd(10)} ${r.rejection_reason}`);
+  }
+  console.log('='.repeat(55));
+  console.log(`Total: ${rows.length}  Valid: ${valid}  Invalid: ${invalid}`);
+
+  const reasons = {};
+  for (const r of rows.filter((r) => !r.valid)) {
+    reasons[r.rejection_reason] = (reasons[r.rejection_reason] || 0) + 1;
+  }
+  if (Object.keys(reasons).length > 0) {
+    console.log('\nRejection reason breakdown:');
+    for (const [reason, count] of Object.entries(reasons)) {
+      console.log(`  ${reason}: ${count}`);
+    }
+  }
+}
