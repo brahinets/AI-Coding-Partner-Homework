@@ -20,7 +20,17 @@
 
 **MCP**: Uses **context7** during code generation to look up Node.js libraries. Queries documented in `research-notes.md`.
 
-**Outputs**: `integrator.js`, `agents/transactionValidator.js`, `agents/fraudDetector.js`, `agents/settlementProcessor.js`
+**Outputs**: `integrator.js`, `agents/transactionValidator.js`, `agents/fraudDetector.js`, `agents/complianceChecker.js`, `agents/settlementProcessor.js`, `agents/reportingAgent.js`
+
+### Pipeline agents (5 total)
+
+| # | Agent | Input dir | Output dir | Decision |
+|---|-------|-----------|------------|----------|
+| 1 | Transaction Validator | `shared/input/` | `shared/output/` | validated / rejected |
+| 2 | Fraud Detector | `shared/output/` | `shared/processing/` | LOW / MEDIUM / HIGH risk score |
+| 3 | Compliance Checker | `shared/processing/` | `shared/compliance/` | cleared / AML_REVIEW_REQUIRED / SANCTIONED_ACCOUNT |
+| 4 | Settlement Processor | `shared/compliance/` | `shared/results/` | settled / rejected (FRAUD_RISK_HIGH) |
+| 5 | Reporting Agent | `shared/results/` | `shared/results/pipeline-report.json` | summary statistics |
 
 ---
 
