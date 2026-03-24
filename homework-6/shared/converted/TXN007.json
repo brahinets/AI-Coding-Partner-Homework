@@ -1,7 +1,7 @@
 {
   "message_id": "7a4eeb1b-c03d-431c-994c-65b276479d9e",
   "timestamp": "2026-03-24T08:44:51.999Z",
-  "source_agent": "integrator",
+  "source_agent": "currency_converter",
   "target_agent": "transaction_validator",
   "message_type": "transaction",
   "data": {

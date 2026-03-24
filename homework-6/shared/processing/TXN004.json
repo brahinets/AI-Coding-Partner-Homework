@@ -1,6 +1,6 @@
 {
-  "message_id": "55349ee9-0407-4d98-b3d5-7dda44cec1d3",
-  "timestamp": "2026-03-22T21:36:49.936Z",
+  "message_id": "9c2288b1-0787-460a-9b7c-4f62c565fb5d",
+  "timestamp": "2026-03-24T08:44:51.998Z",
   "source_agent": "fraud_detector",
   "target_agent": "compliance_checker",
   "message_type": "transaction",
@@ -9,14 +9,17 @@
     "timestamp": "2026-03-16T02:47:00Z",
     "source_account": "ACC-1004",
     "destination_account": "ACC-5500",
-    "amount": "500.00",
-    "currency": "EUR",
+    "amount": "540.00",
+    "currency": "USD",
     "transaction_type": "transfer",
     "description": "Invoice #4471",
     "metadata": {
       "channel": "api",
       "country": "DE"
     },
+    "original_amount": "500.00",
+    "original_currency": "EUR",
+    "conversion_rate": "1.0800",
     "status": "validated",
     "fraud_risk_score": 3,
     "fraud_risk_level": "MEDIUM"

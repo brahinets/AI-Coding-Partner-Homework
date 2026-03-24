@@ -1,8 +1,8 @@
 {
   "message_id": "27651223-11ef-47ca-ba62-245d3e1b927e",
   "timestamp": "2026-03-24T08:44:51.996Z",
-  "source_agent": "compliance_checker",
-  "target_agent": "settlement_processor",
+  "source_agent": "currency_converter",
+  "target_agent": "transaction_validator",
   "message_type": "transaction",
   "data": {
     "transaction_id": "TXN001",
@@ -16,10 +16,6 @@
     "metadata": {
       "channel": "online",
       "country": "US"
-    },
-    "status": "validated",
-    "fraud_risk_score": 0,
-    "fraud_risk_level": "LOW",
-    "compliance_status": "cleared"
+    }
   }
 }

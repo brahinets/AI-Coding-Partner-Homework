@@ -110,5 +110,19 @@
       "channel": "mobile",
       "country": "US"
     }
+  },
+  {
+    "transaction_id": "TXN009",
+    "timestamp": "2026-03-16T11:00:00Z",
+    "source_account": "ACC-1009",
+    "destination_account": "ACC-2009",
+    "amount": "41500.00",
+    "currency": "UAH",
+    "transaction_type": "transfer",
+    "description": "Freelance payment",
+    "metadata": {
+      "channel": "online",
+      "country": "UA"
+    }
   }
 ]

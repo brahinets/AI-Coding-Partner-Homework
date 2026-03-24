@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
+const currencyConverter = require('./agents/currencyConverter');
 const transactionValidator = require('./agents/transactionValidator');
 const fraudDetector = require('./agents/fraudDetector');
 const complianceChecker = require('./agents/complianceChecker');
@@ -18,6 +19,7 @@ const SAMPLE_FILE = path.join(BASE_DIR, 'sample-transactions.json');
 async function ensureDirs() {
   const dirs = [
     path.join(SHARED_DIR, 'input'),
+    path.join(SHARED_DIR, 'converted'),
     path.join(SHARED_DIR, 'output'),
     path.join(SHARED_DIR, 'processing'),
     path.join(SHARED_DIR, 'compliance'),
@@ -36,7 +38,7 @@ async function clearDir(dir) {
 }
 
 async function clearAll() {
-  for (const sub of ['input', 'output', 'processing', 'compliance', 'results']) {
+  for (const sub of ['input', 'converted', 'output', 'processing', 'compliance', 'results']) {
     await clearDir(path.join(SHARED_DIR, sub));
   }
 }
@@ -77,6 +79,7 @@ async function run() {
   console.log(`Loaded ${transactions.length} transactions from sample-transactions.json\n`);
 
   const INPUT_DIR      = path.join(SHARED_DIR, 'input');
+  const CONVERTED_DIR  = path.join(SHARED_DIR, 'converted');
   const OUTPUT_DIR     = path.join(SHARED_DIR, 'output');
   const PROCESSING_DIR = path.join(SHARED_DIR, 'processing');
   const COMPLIANCE_DIR = path.join(SHARED_DIR, 'compliance');
@@ -93,8 +96,13 @@ async function run() {
   for (const txn of transactions) {
     const filename = `${txn.transaction_id}.json`;
 
-    // Stage 1: Validate — read from input, write to output
+    // Stage 0: Currency conversion — read from input, write to converted
     let message = await readMessage(INPUT_DIR, filename);
+    message = currencyConverter.processMessage(message);
+    await writeMessage(CONVERTED_DIR, filename, message);
+
+    // Stage 1: Validate — read from converted, write to output
+    message = await readMessage(CONVERTED_DIR, filename);
     message = transactionValidator.processMessage(message);
     await writeMessage(OUTPUT_DIR, filename, message);
 

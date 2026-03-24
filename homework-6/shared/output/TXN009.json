@@ -1,0 +1,25 @@
+{
+  "message_id": "bc9d7826-e353-409d-93d0-423bf4110b92",
+  "timestamp": "2026-03-24T08:44:51.999Z",
+  "source_agent": "transaction_validator",
+  "target_agent": "fraud_detector",
+  "message_type": "transaction",
+  "data": {
+    "transaction_id": "TXN009",
+    "timestamp": "2026-03-16T11:00:00Z",
+    "source_account": "ACC-1009",
+    "destination_account": "ACC-2009",
+    "amount": "996.00",
+    "currency": "USD",
+    "transaction_type": "transfer",
+    "description": "Freelance payment",
+    "metadata": {
+      "channel": "online",
+      "country": "UA"
+    },
+    "original_amount": "41500.00",
+    "original_currency": "UAH",
+    "conversion_rate": "0.0240",
+    "status": "validated"
+  }
+}

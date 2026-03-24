@@ -1,8 +1,8 @@
 {
   "message_id": "7f1c8179-55f0-4a9a-bc47-cf488defead3",
   "timestamp": "2026-03-24T08:44:51.999Z",
-  "source_agent": "transaction_validator",
-  "target_agent": "fraud_detector",
+  "source_agent": "currency_converter",
+  "target_agent": "transaction_validator",
   "message_type": "transaction",
   "data": {
     "transaction_id": "TXN008",
@@ -16,7 +16,6 @@
     "metadata": {
       "channel": "mobile",
       "country": "US"
-    },
-    "status": "validated"
+    }
   }
 }

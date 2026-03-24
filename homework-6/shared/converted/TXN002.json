@@ -1,8 +1,8 @@
 {
   "message_id": "5405931a-cd40-4993-8aea-648b2653e346",
   "timestamp": "2026-03-24T08:44:51.997Z",
-  "source_agent": "compliance_checker",
-  "target_agent": "settlement_processor",
+  "source_agent": "currency_converter",
+  "target_agent": "transaction_validator",
   "message_type": "transaction",
   "data": {
     "transaction_id": "TXN002",
@@ -16,11 +16,6 @@
     "metadata": {
       "channel": "branch",
       "country": "US"
-    },
-    "status": "validated",
-    "fraud_risk_score": 3,
-    "fraud_risk_level": "MEDIUM",
-    "compliance_flag": "AML_REVIEW_REQUIRED",
-    "compliance_status": "cleared"
+    }
   }
 }
