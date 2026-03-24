@@ -1,0 +1,18 @@
+{
+  "transaction_id": "TXN-API-3",
+  "amount": "1992.00",
+  "currency": "USD",
+  "source_account": "ACC-1003",
+  "destination_account": "ACC-2003",
+  "timestamp": "2026-03-24T10:02:00Z",
+  "transaction_type": "wire_transfer",
+  "original_amount": "83000.00",
+  "original_currency": "UAH",
+  "conversion_rate": "0.0240",
+  "status": "settled",
+  "fraud_risk_score": 0,
+  "fraud_risk_level": "LOW",
+  "compliance_status": "cleared",
+  "settlement_id": "c5d9604d-54ac-4d7e-b160-6848f24358d6",
+  "settlement_timestamp": "2026-03-24T08:52:41.374Z"
+}

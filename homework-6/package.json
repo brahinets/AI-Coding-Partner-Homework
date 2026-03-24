@@ -9,12 +9,14 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.27.1",
     "decimal.js": "^10.6.0",
+    "express": "^5.2.1",
     "uuid": "^13.0.0"
   },
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "pipeline": "node integrator.js"
+    "pipeline": "node integrator.js",
+    "api": "node api/server.js"
   },
   "jest": {
     "testEnvironment": "node",
