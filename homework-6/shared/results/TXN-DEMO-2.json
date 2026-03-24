@@ -1,0 +1,20 @@
+{
+  "transaction_id": "TXN-DEMO-2",
+  "amount": "75000.00",
+  "currency": "USD",
+  "source_account": "ACC-D003",
+  "destination_account": "ACC-D004",
+  "timestamp": "2026-03-24T09:01:00Z",
+  "transaction_type": "wire_transfer",
+  "description": "Property settlement",
+  "metadata": {
+    "channel": "branch",
+    "country": "US"
+  },
+  "status": "rejected",
+  "fraud_risk_score": 7,
+  "fraud_risk_level": "HIGH",
+  "compliance_flag": "AML_REVIEW_REQUIRED",
+  "compliance_status": "cleared",
+  "rejection_reason": "FRAUD_RISK_HIGH"
+}

@@ -1,0 +1,23 @@
+{
+  "transaction_id": "TXN-DEMO-3",
+  "amount": "996.00",
+  "currency": "USD",
+  "source_account": "ACC-D005",
+  "destination_account": "ACC-D006",
+  "timestamp": "2026-03-24T09:02:00Z",
+  "transaction_type": "transfer",
+  "description": "Freelance payment",
+  "metadata": {
+    "channel": "online",
+    "country": "UA"
+  },
+  "original_amount": "41500.00",
+  "original_currency": "UAH",
+  "conversion_rate": "0.0240",
+  "status": "settled",
+  "fraud_risk_score": 1,
+  "fraud_risk_level": "LOW",
+  "compliance_status": "cleared",
+  "settlement_id": "8e88f5d2-f93f-424d-b167-9b15a806bc78",
+  "settlement_timestamp": "2026-03-24T09:01:09.047Z"
+}
