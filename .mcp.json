@@ -1,5 +1,10 @@
 {
   "mcpServers": {
+    "context7": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"]
+    },
     "github": {
       "type": "stdio",
       "command": "npx",
@@ -15,6 +20,13 @@
         "-y",
         "@modelcontextprotocol/server-filesystem",
         "/Users/y.brahinets/Yaro/playground/AI-Coding-Partner-Homework/AI-Coding-Partner-Homework"
+      ]
+    },
+    "pipeline-status": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "/Users/y.brahinets/Yaro/playground/AI-Coding-Partner-Homework/AI-Coding-Partner-Homework/homework-6/mcp/server.js"
       ]
     },
     "yaroslav-custom-mcp": {

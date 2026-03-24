@@ -1,0 +1,22 @@
+{
+  "transaction_id": "TXN002",
+  "timestamp": "2026-03-16T09:15:00Z",
+  "source_account": "ACC-1002",
+  "destination_account": "ACC-3001",
+  "amount": "25000.00",
+  "currency": "USD",
+  "transaction_type": "wire_transfer",
+  "description": "Equipment purchase",
+  "metadata": {
+    "channel": "branch",
+    "country": "US"
+  },
+  "status": "settled",
+  "fraud_risk_score": 3,
+  "fraud_risk_level": "MEDIUM",
+  "compliance_flag": "AML_REVIEW_REQUIRED",
+  "compliance_status": "cleared",
+  "settlement_id": "15857ea0-b3d5-456e-9d20-7e14603c7d99",
+  "settlement_timestamp": "2026-03-22T21:36:49.939Z",
+  "review_flag": true
+}

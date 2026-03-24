@@ -1,0 +1,23 @@
+{
+  "message_id": "336dbac0-a39c-4cb0-9181-a4f095f20b03",
+  "timestamp": "2026-03-22T21:36:49.936Z",
+  "source_agent": "fraud_detector",
+  "target_agent": "compliance_checker",
+  "message_type": "transaction",
+  "data": {
+    "transaction_id": "TXN006",
+    "timestamp": "2026-03-16T10:05:00Z",
+    "source_account": "ACC-1006",
+    "destination_account": "ACC-7700",
+    "amount": "200.00",
+    "currency": "XYZ",
+    "transaction_type": "transfer",
+    "description": "Test payment",
+    "metadata": {
+      "channel": "online",
+      "country": "US"
+    },
+    "status": "rejected",
+    "rejection_reason": "INVALID_CURRENCY"
+  }
+}

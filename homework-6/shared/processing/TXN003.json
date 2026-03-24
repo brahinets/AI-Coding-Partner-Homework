@@ -1,0 +1,24 @@
+{
+  "message_id": "5a914856-b12e-4186-989d-54f0b1bb44c1",
+  "timestamp": "2026-03-22T21:36:49.936Z",
+  "source_agent": "fraud_detector",
+  "target_agent": "compliance_checker",
+  "message_type": "transaction",
+  "data": {
+    "transaction_id": "TXN003",
+    "timestamp": "2026-03-16T09:30:00Z",
+    "source_account": "ACC-1003",
+    "destination_account": "ACC-9999",
+    "amount": "9999.99",
+    "currency": "USD",
+    "transaction_type": "transfer",
+    "description": "Consulting payment",
+    "metadata": {
+      "channel": "online",
+      "country": "US"
+    },
+    "status": "validated",
+    "fraud_risk_score": 2,
+    "fraud_risk_level": "LOW"
+  }
+}

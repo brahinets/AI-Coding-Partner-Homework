@@ -1,0 +1,37 @@
+{
+  "name": "homework-6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "integrator.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "decimal.js": "^10.6.0",
+    "uuid": "^13.0.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "pipeline": "node integrator.js"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "agents/**/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 80
+      }
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "jest": "^30.3.0"
+  }
+}
