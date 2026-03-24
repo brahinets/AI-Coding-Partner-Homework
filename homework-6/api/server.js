@@ -30,6 +30,13 @@ async function ensureResultsDir() {
   await fs.promises.mkdir(RESULTS_DIR, { recursive: true });
 }
 
+async function clearResultsDir() {
+  const files = await fs.promises.readdir(RESULTS_DIR);
+  await Promise.all(
+    files.filter((f) => f.endsWith('.json')).map((f) => fs.promises.unlink(path.join(RESULTS_DIR, f))),
+  );
+}
+
 function wrapTransaction(txn) {
   return {
     message_id: uuidv4(),
@@ -139,6 +146,7 @@ const PORT = process.env.PORT || 1234;
 /* istanbul ignore next */
 if (require.main === module) {
   ensureResultsDir()
+    .then(() => clearResultsDir())
     .then(() => {
       app.listen(PORT, () => {
         console.log(`API server running on http://localhost:${PORT}`);

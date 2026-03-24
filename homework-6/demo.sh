@@ -84,9 +84,6 @@ for i in $(seq 1 10); do
   fi
 done
 
-# Clear previous demo results
-rm -f "$SCRIPT_DIR/shared/results"/TXN-DEMO-*.json
-
 pause "Step 2: Submit transactions"
 
 # ── step 2: submit transactions ────────────────────────────────────────────────
