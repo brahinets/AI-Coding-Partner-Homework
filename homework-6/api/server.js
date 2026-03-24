@@ -99,6 +99,23 @@ app.get('/api/transactions/:id/status', async (req, res) => {
   }
 });
 
+// GET /api/results/details — list all processed transactions with full data
+app.get('/api/results/details', async (req, res) => {
+  try {
+    await ensureResultsDir();
+    const files = await fs.promises.readdir(RESULTS_DIR);
+    const results = [];
+    for (const file of files) {
+      if (!file.endsWith('.json') || file === 'pipeline-report.json') continue;
+      const raw = await fs.promises.readFile(path.join(RESULTS_DIR, file), 'utf8');
+      results.push(JSON.parse(raw));
+    }
+    return res.status(200).json(results);
+  } catch (err) {
+    return res.status(500).json({ error: 'Failed to read results', details: err.message });
+  }
+});
+
 // GET /api/results — list all processed transactions
 app.get('/api/results', async (req, res) => {
   try {
