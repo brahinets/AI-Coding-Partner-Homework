@@ -44,6 +44,9 @@ htmlcov/
 *.war
 *.ear
 
+# Claude Code local settings (contains secrets)
+.claude/settings.local.json
+
 # Temporary files
 tmp/
 temp/

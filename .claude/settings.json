@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+    
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(git commit*)",
+            "command": "./homework-6/scripts/coverage-gate.sh",
+            "timeout": 120,
+            "statusMessage": "Coverage gate: checking test coverage before commit..."
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Session started!'"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,16 +1,16 @@
 #!/bin/bash
-# Coverage gate hook — blocks git push if statement coverage < 80%
-# Reads tool_input from stdin; only activates on git push commands.
+# Coverage gate hook — blocks git commit if statement coverage < 80%
+# Reads tool_input from stdin; only activates on git commit commands.
 
 INPUT=$(cat)
 BASH_CMD=$(echo "$INPUT" | jq -r '.tool_input.command // ""')
 
-# Only intercept git push commands
-if ! echo "$BASH_CMD" | grep -qE 'git push'; then
+# Only intercept git commit commands
+if ! echo "$BASH_CMD" | grep -qE 'git commit'; then
   exit 0
 fi
 
-echo "Coverage gate: running Jest coverage check before push..." >&2
+echo "Coverage gate: running Jest coverage check before commit..." >&2
 
 COVERAGE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$COVERAGE_DIR" || exit 0
@@ -37,3 +37,4 @@ else
   echo "{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"allow\",\"permissionDecisionReason\":\"Coverage gate passed: ${STMTS}% statement coverage.\"}}"
   exit 0
 fi
+# test
